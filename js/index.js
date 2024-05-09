@@ -4,17 +4,26 @@ const modalDescription = document.getElementById('modal-description');
 
 images.forEach(image => {
     image.addEventListener('click',() => {
-        modalDescription.textContent = image.dataset.description;
-        modal.style.display = 'block';
+        const description = image.dataset.description;
+        showModal(description);
     });
 });
 
 document.querySelector('.close').addEventListener('click',() => {
-    modal.style.display = 'none';
+    closeModal();
 });
 
 window.addEventListener('click' , (event) =>{
     if(event.target === modal){
-        modal.style.display = 'none';
+        closeModal();
     }
 });
+
+function showModal(description) {
+    modalDescription.textContent = description;
+    modal.style.display = 'block';
+}
+
+function closeModal() {
+    modal.style.display = 'none';
+}
