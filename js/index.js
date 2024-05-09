@@ -1,6 +1,6 @@
 const images = document.querySelectorAll('.image');
-const modal = document.getElementById('.modal');
-const modalDescription = document.getElementById('.modal-description');
+const modal = document.getElementById('modal');
+const modalDescription = document.getElementById('modal-description');
 
 images.forEach(image => {
     image.addEventListener('click',() => {
